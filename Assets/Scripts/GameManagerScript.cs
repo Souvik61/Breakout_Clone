@@ -51,7 +51,7 @@ public class GameManagerScript : MonoBehaviour
     {
         ResetGame();
         //ballMoverScript.ballVelocityVec = new Vector2(Random.Range(-1, 1), 1).normalized;
-        ballMoverScript.ballObj.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1, 1), 1).normalized);
+        //ballMoverScript.ballObj.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1, 1), 1).normalized);
     }
 
     // Update is called once per frame
@@ -135,9 +135,7 @@ public class GameManagerScript : MonoBehaviour
 
     void LaunchBall()
     {
-        ballMoverScript.SetState(BallMoverScript.ControlTypes.SELF);
-        ballMoverScript.ballObj.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1, 1), 1).normalized * 10, ForceMode2D.Impulse);
-
+        ballMoverScript.LaunchBall();
         ballOnPaddle = false;
     }
 

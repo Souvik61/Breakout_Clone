@@ -59,9 +59,9 @@ public class BallMoverScript : MonoBehaviour
             //Collision in world point
             var collInWorld = collision.contacts[0].point;
             var collInLocal = brick.transform.InverseTransformPoint(collInWorld);
-            float posXnor = collInLocal.x * 2;
-            ballVelocityVec = new Vector2(posXnor, -ballVelocityVec.y).normalized;
-
+            float posXnormal = collInLocal.x * 2;
+            ballBody.velocity = (new Vector2(posXnormal, 1)).normalized*10;
+            Debug.Log((new Vector2(posXnormal, -ballBody.velocity.y)).normalized*10);
         }
         //Else normal collision
         else
@@ -86,13 +86,24 @@ public class BallMoverScript : MonoBehaviour
 
     public void SetState(ControlTypes type)
     {
+        ballBody.velocity = Vector2.zero;
+        ballBody.angularVelocity = 0;
+
         currCtrlType = type;
+    }
+
+    public void LaunchBall()
+    {
+        SetState(BallMoverScript.ControlTypes.SELF);
+        ballObj.GetComponent<Rigidbody2D>().velocity = (new Vector2(Random.Range(-1, 1), 1)).normalized * 10;
     }
 
     public void ResetBall()
     {
         ballObj.transform.position = ballSpawnPoint.position;
         ballVelocityVec = Vector2.zero;
+        ballBody.velocity = Vector2.zero;
+        ballBody.angularVelocity = 0;
         currCtrlType = ControlTypes.PADDLE;
     }
 }
