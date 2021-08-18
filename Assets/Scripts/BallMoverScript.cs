@@ -61,7 +61,7 @@ public class BallMoverScript : MonoBehaviour
             var collInLocal = brick.transform.InverseTransformPoint(collInWorld);
             float posXnormal = collInLocal.x * 2;
             ballBody.velocity = (new Vector2(posXnormal, 1)).normalized*10;
-            Debug.Log((new Vector2(posXnormal, -ballBody.velocity.y)).normalized*10);
+            //Debug.Log((new Vector2(posXnormal, -ballBody.velocity.y)).normalized*10);
         }
         //Else normal collision
         else

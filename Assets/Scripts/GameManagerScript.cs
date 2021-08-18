@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Tilemaps;
-using UnityEditor;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+
 
 public class GameManagerScript : MonoBehaviour
 {
     //Editor vars
+    public LevelObj levelObj;
     public BricksKeeperScript keeperScript;
+    public SoundManagerScript soundManager;
     public Transform ballSpawnPoint;
     public GameObject paddle;
     public AltBallScript activeBall;
@@ -49,6 +47,9 @@ public class GameManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        PopulateLevel();
+
         ResetGame();
         //ballMoverScript.ballVelocityVec = new Vector2(Random.Range(-1, 1), 1).normalized;
         //ballMoverScript.ballObj.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1, 1), 1).normalized);
@@ -102,6 +103,9 @@ public class GameManagerScript : MonoBehaviour
 
     void OnGameOver()
     {
+        //Play game over sound
+        soundManager.PlaySound_Over();   
+        
         winText.GetComponent<TMPro.TMP_Text>().text = "You Lose";
         winText.SetActive(true);
         currentState = GameState.PAUSED;
@@ -135,8 +139,14 @@ public class GameManagerScript : MonoBehaviour
 
     void LaunchBall()
     {
+        soundManager.PlaySound_Hit();
         ballMoverScript.LaunchBall();
         ballOnPaddle = false;
+    }
+
+    private void PopulateLevel()
+    {
+        levelPrefab = levelObj.GetLevelPrefabWithID(levelObj.GetToStartLevelID());
     }
 
     //External trigger events --start
