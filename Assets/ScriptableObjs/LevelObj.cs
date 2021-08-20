@@ -19,6 +19,7 @@ public class LevelObj : ScriptableObject
     [SerializeField]
     private GameObject level6Prefab;
 
+    //Internal vars
     private int toStartLevelId = 1;
     private Dictionary<int, GameObject> levelPairs=new Dictionary<int, GameObject>();
 

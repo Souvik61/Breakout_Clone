@@ -55,8 +55,8 @@ GameObject:
   - component: {fileID: 5660337185586787086}
   - component: {fileID: 5660337185586787072}
   - component: {fileID: 5660337185586787087}
-  - component: {fileID: 5660337185586787073}
   - component: {fileID: 2716125727647285656}
+  - component: {fileID: 5660337185586787073}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -1237,6 +1237,20 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!19719996 &2716125727647285656
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5660337185586787085}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: dc13b976c7f9d414c87aca777eea8bf8, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
 --- !u!50 &5660337185586787073
 Rigidbody2D:
   serializedVersion: 4
@@ -1258,17 +1272,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!19719996 &2716125727647285656
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5660337185586787085}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: dc13b976c7f9d414c87aca777eea8bf8, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}

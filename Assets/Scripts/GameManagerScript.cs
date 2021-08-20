@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -33,7 +33,7 @@ public class GameManagerScript : MonoBehaviour
 
     private void OnDisable()
     {
-        AllEventsScript.OnBallGoOut += EndTrigger_OnBallEnter;
+        AllEventsScript.OnBallGoOut -= EndTrigger_OnBallEnter;
         AllEventsScript.OnAllTilesDestroyed -= OnAllBricksDestroyed;
 
     }
@@ -65,6 +65,10 @@ public class GameManagerScript : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Space))
         {
             if (ballOnPaddle) Invoke("LaunchBall", 0.1f);
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
         }
 
     }
