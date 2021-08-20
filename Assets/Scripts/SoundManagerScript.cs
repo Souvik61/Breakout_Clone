@@ -7,6 +7,7 @@ public class SoundManagerScript : MonoBehaviour
     public AudioClip brickHitSound;
     public AudioClip brickOutSound;
     public AudioClip gameOverSound;
+    public AudioClip gameWinSound;
 
     private AllEventsScript eventsScript;
     private AudioSource audioSource;
@@ -44,6 +45,11 @@ public class SoundManagerScript : MonoBehaviour
     public void PlaySound_Over()
     {
         audioSource.PlayOneShot(gameOverSound, 1.0f);
+    }
+
+    public void PlaySound_Win()
+    {
+        audioSource.PlayOneShot(gameWinSound, 1.0f);
     }
 
 }

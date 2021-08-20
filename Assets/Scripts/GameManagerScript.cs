@@ -100,6 +100,7 @@ public class GameManagerScript : MonoBehaviour
 
     void OnGameWin()
     {
+        soundManager.PlaySound_Win();
         winText.GetComponent<TMPro.TMP_Text>().text = "You Win!";
         winText.SetActive(true);
         currentState = GameState.PAUSED;

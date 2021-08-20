@@ -1896,6 +1896,7 @@ MonoBehaviour:
   brickHitSound: {fileID: 8300000, guid: ade9f656ac7937c4a8d8945740d5e168, type: 3}
   brickOutSound: {fileID: 0}
   gameOverSound: {fileID: 8300000, guid: 562455d69e4f84c409c86f5600ea2a8e, type: 3}
+  gameWinSound: {fileID: 8300000, guid: 6cba12800d777d94d939a5d375bf1ba6, type: 3}
 --- !u!82 &2087812511
 AudioSource:
   m_ObjectHideFlags: 0
