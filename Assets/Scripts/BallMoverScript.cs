@@ -95,7 +95,7 @@ public class BallMoverScript : MonoBehaviour
     public void LaunchBall()
     {
         SetState(BallMoverScript.ControlTypes.SELF);
-        ballObj.GetComponent<Rigidbody2D>().velocity = (new Vector2(Random.Range(-1, 1), 1)).normalized * 10;
+        ballObj.GetComponent<Rigidbody2D>().velocity = (new Vector2(Random.Range(-1.0f, 1.0f), 1)).normalized * 10;
     }
 
     public void ResetBall()

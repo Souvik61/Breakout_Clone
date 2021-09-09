@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -33,7 +33,7 @@ public class GameManagerScript : MonoBehaviour
 
     private void OnDisable()
     {
-        AllEventsScript.OnBallGoOut += EndTrigger_OnBallEnter;
+        AllEventsScript.OnBallGoOut -= EndTrigger_OnBallEnter;
         AllEventsScript.OnAllTilesDestroyed -= OnAllBricksDestroyed;
 
     }
@@ -66,6 +66,10 @@ public class GameManagerScript : MonoBehaviour
         {
             if (ballOnPaddle) Invoke("LaunchBall", 0.1f);
         }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
 
     }
 
@@ -96,6 +100,7 @@ public class GameManagerScript : MonoBehaviour
 
     void OnGameWin()
     {
+        soundManager.PlaySound_Win();
         winText.GetComponent<TMPro.TMP_Text>().text = "You Win!";
         winText.SetActive(true);
         currentState = GameState.PAUSED;

@@ -5,6 +5,14 @@ public class HomeSceneScript : MonoBehaviour
 {
     public LevelObj levelObj;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     public void OnLevelButtonPressed(int levelID)
     {
         Debug.Log("Start level" + levelID.ToString());
