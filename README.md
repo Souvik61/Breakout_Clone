@@ -3,7 +3,7 @@
  
  ## How to play
  
- Download Release folder and run breakout_clone.exe to play the game.
+ Download **Release** folder and run breakout_clone.exe to play the game.
  
  ## Screenshots
  
