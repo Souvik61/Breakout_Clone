@@ -1,6 +1,9 @@
 # Breakout_Clone
- Clone of Breakout with custom levels.
+ Clone of Breakout with custom levels made with **Unity**.
+ ## How to play
  Download Release folder and run breakout_clone.exe to play the game.
+ 
+ ## Screenshots
  
 ![Untitled](https://user-images.githubusercontent.com/35128994/130320186-293fe865-9be7-47bd-a487-221e990ca691.png)
 
